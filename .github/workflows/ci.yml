@@ -17,27 +17,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php:
-          - '8.0'
-          - '8.1'
-          - '8.2'
-        laravel:
-          - 8.*
-          - 9.*
-          - 10.*
-        prefer:
-          - 'prefer-lowest'
-          - 'prefer-stable'
+        php: [8.3,8.2, 8.1]
+        laravel: [10.*]
+        stability: [prefer-lowest, prefer-stable]
         include:
-          - laravel: '8.*'
-            testbench: '6.*'
-          - laravel: '9.*'
-            testbench: '7.*'
-          - laravel: '10.*'
-            testbench: '8.*'
-            
+          - laravel: 10.*
+            testbench: 8.*
+            carbon: ^2.63
 
-    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} --${{ matrix.prefer }}
+    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} --${{ matrix.stability }}
 
     steps:
     - uses: actions/checkout@v3
@@ -46,19 +34,19 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
-        extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv
+        extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
         coverage: pcov
 
     - uses: actions/cache@v3.0.5
       name: Cache dependencies
       with:
         path: ~/.composer/cache/files
-        key: composer-php-${{ matrix.php }}-${{ matrix.laravel }}-${{ matrix.prefer }}-${{ hashFiles('composer.json') }}
+        key: composer-php-${{ matrix.php }}-${{ matrix.laravel }}-${{ matrix.stability }}-${{ hashFiles('composer.json') }}
 
     - name: Install dependencies
       run: |
-        composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
-        composer update --${{ matrix.prefer }} --prefer-dist --no-interaction --no-suggest
+        composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:${{ matrix.carbon }}" --no-interaction --no-update
+        composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
     - name: Run tests
       run: |
