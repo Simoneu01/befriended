@@ -29,7 +29,6 @@
         }
     ],
     "require": {
-        "doctrine/dbal": "^3.6",
         "illuminate/database": "^10.0",
         "illuminate/support": "^10.0"
     },
