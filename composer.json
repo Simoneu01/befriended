@@ -1,6 +1,6 @@
 {
-    "name": "rennokki/befriended",
-    "description": "Eloquent Befriended brings social media-like features like following, blocking and filtering content based on following or blocked models.",
+    "name": "simoneu01/befriended",
+    "description": "Eloquent Befriended with Laravel 10 support",
     "keywords": [
         "eloquent",
         "laravel",
