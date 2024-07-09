@@ -20,7 +20,7 @@ final class PageFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'Page'.Str::random(5),
+            'name' => 'Page' . Str::random(5),
         ];
     }
 }

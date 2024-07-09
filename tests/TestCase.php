@@ -23,12 +23,12 @@ abstract class TestCase extends Orchestra
 
         $this->loadLaravelMigrations(['--database' => 'sqlite']);
 
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
-        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
         Factory::guessFactoryNamesUsing(function (string $modelName) {
-            return 'Rennokki\\Befriended\\Test\\Database\\Factories\\'.class_basename($modelName).'Factory';
+            return 'Rennokki\\Befriended\\Test\\Database\\Factories\\' . class_basename($modelName) . 'Factory';
         });
 
         $this->artisan('migrate', ['--database' => 'sqlite']);
@@ -58,7 +58,7 @@ abstract class TestCase extends Orchestra
         $app['config']->set('database.default', 'sqlite');
         $app['config']->set('database.connections.sqlite', [
             'driver' => 'sqlite',
-            'database' => __DIR__.'/database.sqlite',
+            'database' => __DIR__ . '/database.sqlite',
             'prefix' => '',
         ]);
         $app['config']->set('auth.providers.users.model', User::class);
@@ -76,6 +76,6 @@ abstract class TestCase extends Orchestra
      */
     protected function resetDatabase()
     {
-        file_put_contents(__DIR__.'/database.sqlite', null);
+        file_put_contents(__DIR__ . '/database.sqlite', null);
     }
 }

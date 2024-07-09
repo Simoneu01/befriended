@@ -25,21 +25,25 @@ class CanFilterBlockingTest extends TestCase
     public function test_can_filter_blockers()
     {
         $this->assertEquals(
-            10, Page::filterBlockingsOf($this->bob)->count()
+            10,
+            Page::filterBlockingsOf($this->bob)->count()
         );
 
         $this->assertEquals(
-            10, Page::filterBlockingsOf($this->alice)->count()
+            10,
+            Page::filterBlockingsOf($this->alice)->count()
         );
 
         $this->bob->block(Page::find(1));
 
         $this->assertEquals(
-            9, Page::filterBlockingsOf($this->bob)->count()
+            9,
+            Page::filterBlockingsOf($this->bob)->count()
         );
 
         $this->assertEquals(
-            10, Page::filterBlockingsOf($this->alice)->count()
+            10,
+            Page::filterBlockingsOf($this->alice)->count()
         );
     }
 }

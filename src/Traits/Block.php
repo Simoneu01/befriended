@@ -4,5 +4,6 @@ namespace Rennokki\Befriended\Traits;
 
 trait Block
 {
-    use CanBeBlocked, CanBlock;
+    use CanBeBlocked;
+    use CanBlock;
 }

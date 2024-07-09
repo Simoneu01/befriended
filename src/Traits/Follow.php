@@ -4,5 +4,6 @@ namespace Rennokki\Befriended\Traits;
 
 trait Follow
 {
-    use CanBeFollowed, CanFollow;
+    use CanBeFollowed;
+    use CanFollow;
 }

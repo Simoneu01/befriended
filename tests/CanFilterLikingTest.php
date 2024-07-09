@@ -25,42 +25,50 @@ class CanFilterLikingTest extends TestCase
     public function test_filters_liked_pages()
     {
         $this->assertEquals(
-            0, Page::likedBy($this->bob)->count()
+            0,
+            Page::likedBy($this->bob)->count()
         );
 
         $this->assertEquals(
-            0, Page::likedBy($this->alice)->count()
+            0,
+            Page::likedBy($this->alice)->count()
         );
 
         $this->bob->like(Page::find(1));
 
         $this->assertEquals(
-            1, Page::likedBy($this->bob)->count()
+            1,
+            Page::likedBy($this->bob)->count()
         );
 
         $this->assertEquals(
-            0, Page::likedBy($this->alice)->count()
+            0,
+            Page::likedBy($this->alice)->count()
         );
     }
 
     public function test_filters_non_liked_pages()
     {
         $this->assertEquals(
-            10, Page::filterUnlikedFor($this->bob)->count()
+            10,
+            Page::filterUnlikedFor($this->bob)->count()
         );
 
         $this->assertEquals(
-            10, Page::filterUnlikedFor($this->alice)->count()
+            10,
+            Page::filterUnlikedFor($this->alice)->count()
         );
 
         $this->bob->like(Page::find(1));
 
         $this->assertEquals(
-            9, Page::filterUnlikedFor($this->bob)->count()
+            9,
+            Page::filterUnlikedFor($this->bob)->count()
         );
 
         $this->assertEquals(
-            10, Page::filterUnlikedFor($this->alice)->count()
+            10,
+            Page::filterUnlikedFor($this->alice)->count()
         );
     }
 }

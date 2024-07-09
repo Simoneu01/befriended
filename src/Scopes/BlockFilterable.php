@@ -27,7 +27,8 @@ trait BlockFilterable
             ->toArray();
 
         return $query->whereNotIn(
-            $this->getKeyName(), $blockingsIds
+            $this->getKeyName(),
+            $blockingsIds
         );
     }
 
