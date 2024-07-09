@@ -1,6 +1,6 @@
 {
     "name": "simoneu01/befriended",
-    "description": "Eloquent Befriended with Laravel 10 support",
+    "description": "Eloquent Befriended with Laravel 11 support",
     "keywords": [
         "eloquent",
         "laravel",
@@ -18,25 +18,24 @@
         "blocking",
         "blocker"
     ],
-    "homepage": "https://github.com/renoki-co/befriended",
+    "homepage": "https://github.com/Simoneu01/befriended",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "Alex Renoki",
-            "email": "alex@renoki.org",
-            "homepage": "https://github.com/rennokki",
+            "name": "Simone Ungaro",
+            "email": "simoneungaro@hotmail.it",
+            "homepage": "https://github.com/Simoneu01",
             "role": "Developer"
         }
     ],
     "require": {
-        "illuminate/database": "^9.0.1|^10.0",
-        "illuminate/support": "^9.0.1|^10.0"
+        "illuminate/database": "^9.0.1|^10.0|^11.0",
+        "illuminate/support": "^9.0.1|^10.0|^11.0"
     },
     "require-dev": {
-        "laravel/legacy-factories": "^1.3",
         "mockery/mockery": "^1.5",
-        "orchestra/testbench": "^7.0|^8.8",
-        "phpunit/phpunit": "^9.5.21"
+        "orchestra/testbench": "^7.0|^8.8|^9.0",
+        "phpunit/phpunit": "^9.5.21|^10.5"
     },
     "autoload": {
         "psr-4": {
@@ -45,7 +44,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Rennokki\\Befriended\\Test\\": "tests"
+            "Rennokki\\Befriended\\Test\\": "tests",
+            "Rennokki\\Befriended\\Test\\Database\\Factories\\": "tests/database/factories/"
         }
     },
     "scripts": {
@@ -61,5 +61,6 @@
     "config": {
         "sort-packages": true
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
