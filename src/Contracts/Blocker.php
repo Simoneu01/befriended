@@ -29,7 +29,7 @@ interface Blocker
     /**
      * Block a certain model.
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $mode
+     * @param  \Illuminate\Database\Eloquent\Model  $model
      */
     public function block($model): bool;
 
