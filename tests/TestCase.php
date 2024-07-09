@@ -8,6 +8,7 @@ use Rennokki\Befriended\Models\FollowerModel;
 use Rennokki\Befriended\Models\LikerModel;
 use Rennokki\Befriended\Test\Models\Page;
 use Rennokki\Befriended\Test\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 abstract class TestCase extends Orchestra
 {
@@ -28,7 +29,10 @@ abstract class TestCase extends Orchestra
 
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
 
-        $this->withFactories(__DIR__.'/database/factories');
+
+        Factory::guessFactoryNamesUsing(function (string $modelName) {
+            return 'Rennokki\\Befriended\\Test\\Database\\Factories\\' . class_basename($modelName) . 'Factory';
+        });
 
         $this->artisan('migrate', ['--database' => 'sqlite']);
     }

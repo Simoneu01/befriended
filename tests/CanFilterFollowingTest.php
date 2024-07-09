@@ -15,11 +15,11 @@ class CanFilterFollowingTest extends TestCase
     {
         parent::setUp();
 
-        $this->bob = factory(User::class)->create();
+        $this->bob = User::factory()->create();
 
-        $this->alice = factory(User::class)->create();
+        $this->alice = User::factory()->create();
 
-        factory(Page::class, 10)->create();
+        Page::factory()->count(10)->create();
     }
 
     public function test_filters_followed_pages()

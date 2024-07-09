@@ -22,15 +22,15 @@ class LikingTest extends TestCase
     {
         parent::setUp();
 
-        $this->bob = factory(User::class)->create();
+        $this->bob = User::factory()->create();
 
-        $this->alice = factory(User::class)->create();
+        $this->alice = User::factory()->create();
 
-        $this->mark = factory(User::class)->create();
+        $this->mark = User::factory()->create();
 
-        $this->page = factory(Page::class)->create();
+        $this->page = Page::factory()->create();
 
-        $this->simplePage = factory(SimplePage::class)->create();
+        $this->simplePage = SimplePage::factory()->create();
     }
 
     public function test_liking()

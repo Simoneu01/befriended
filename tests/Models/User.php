@@ -2,6 +2,7 @@
 
 namespace Rennokki\Befriended\Test\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Rennokki\Befriended\Contracts\Blocking;
 use Rennokki\Befriended\Contracts\Following;
@@ -18,6 +19,8 @@ use Rennokki\Befriended\Traits\CanLike;
 
 class User extends Authenticatable implements Following, Blocking, Liking
 {
+    use HasFactory;
+
     use CanFollow, CanBeFollowed,
         CanBlock, CanBeBlocked,
         CanLike, CanBeLiked,
