@@ -24,7 +24,6 @@ interface Followable
      * Remove a follower from a model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function revokeFollower($model): bool;
 
@@ -32,7 +31,6 @@ interface Followable
      * Check if the model has requested to follow the current model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function hasFollowRequestFrom($model): bool;
 
@@ -40,7 +38,6 @@ interface Followable
      * Accept request from a certain model to be followed.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function acceptFollowRequest($model): bool;
 
@@ -48,7 +45,6 @@ interface Followable
      * Decline request from a certain model to be followed.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function declineFollowRequest($model): bool;
 }

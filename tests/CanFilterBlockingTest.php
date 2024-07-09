@@ -15,31 +15,35 @@ class CanFilterBlockingTest extends TestCase
     {
         parent::setUp();
 
-        $this->bob = factory(User::class)->create();
+        $this->bob = User::factory()->create();
 
-        $this->alice = factory(User::class)->create();
+        $this->alice = User::factory()->create();
 
-        factory(Page::class, 10)->create();
+        Page::factory()->count(10)->create();
     }
 
     public function test_can_filter_blockers()
     {
         $this->assertEquals(
-            10, Page::filterBlockingsOf($this->bob)->count()
+            10,
+            Page::filterBlockingsOf($this->bob)->count()
         );
 
         $this->assertEquals(
-            10, Page::filterBlockingsOf($this->alice)->count()
+            10,
+            Page::filterBlockingsOf($this->alice)->count()
         );
 
         $this->bob->block(Page::find(1));
 
         $this->assertEquals(
-            9, Page::filterBlockingsOf($this->bob)->count()
+            9,
+            Page::filterBlockingsOf($this->bob)->count()
         );
 
         $this->assertEquals(
-            10, Page::filterBlockingsOf($this->alice)->count()
+            10,
+            Page::filterBlockingsOf($this->alice)->count()
         );
     }
 }

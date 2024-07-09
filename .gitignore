@@ -1,2 +1,12 @@
-vendor/
+.idea
+.phpunit.cache
+build
 composer.lock
+coverage
+docs
+phpstan.neon
+testbench.yaml
+vendor
+node_modules
+.phpunit.result.cache
+tests/database.sqlite

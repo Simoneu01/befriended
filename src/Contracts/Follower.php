@@ -16,7 +16,6 @@ interface Follower
      * Check if the current model is following another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function isFollowing($model): bool;
 
@@ -24,7 +23,6 @@ interface Follower
      * Check if the current model is following another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function follows($model): bool;
 
@@ -32,7 +30,6 @@ interface Follower
      * Follow a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function follow($model): bool;
 
@@ -40,7 +37,6 @@ interface Follower
      * Unfollow a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function unfollow($model): bool;
 
@@ -56,7 +52,6 @@ interface Follower
      * Check if the current model has requested to follow another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function hasFollowRequested($model): bool;
 
@@ -64,7 +59,6 @@ interface Follower
      * Request to follow a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function followRequest($model): bool;
 
@@ -72,7 +66,6 @@ interface Follower
      * Cancel follow request a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function cancelFollowRequest($model): bool;
 }

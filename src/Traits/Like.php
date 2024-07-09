@@ -4,5 +4,6 @@ namespace Rennokki\Befriended\Traits;
 
 trait Like
 {
-    use CanLike, CanBeLiked;
+    use CanBeLiked;
+    use CanLike;
 }

@@ -31,7 +31,6 @@ trait CanBlock
      * Check if the current model is blocking another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function isBlocking($model): bool
     {
@@ -50,7 +49,6 @@ trait CanBlock
      * Check if the current model is blocking another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function blocks($model): bool
     {
@@ -61,7 +59,6 @@ trait CanBlock
      * Block a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $mode
-     * @return bool
      */
     public function block($model): bool
     {
@@ -84,7 +81,6 @@ trait CanBlock
      * Unblock a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function unblock($model): bool
     {

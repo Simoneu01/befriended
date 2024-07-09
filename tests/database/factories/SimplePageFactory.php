@@ -1,9 +1,26 @@
 <?php
 
-use Illuminate\Support\Str;
+declare(strict_types=1);
 
-$factory->define(\Rennokki\Befriended\Test\Models\SimplePage::class, function () {
-    return [
-        'name' => 'Page'.Str::random(5),
-    ];
-});
+namespace Rennokki\Befriended\Test\Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+use Rennokki\Befriended\Test\Models\SimplePage;
+
+final class SimplePageFactory extends Factory
+{
+    protected $model = SimplePage::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'name' => 'Page' . Str::random(5),
+        ];
+    }
+}

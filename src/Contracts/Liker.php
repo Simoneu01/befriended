@@ -16,7 +16,6 @@ interface Liker
      * Check if the current model is liking another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function isLiking($model): bool;
 
@@ -24,7 +23,6 @@ interface Liker
      * Check if the current model is liking another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function likes($model): bool;
 
@@ -32,7 +30,6 @@ interface Liker
      * Like a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function like($model): bool;
 
@@ -40,7 +37,6 @@ interface Liker
      * Unlike a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function unlike($model): bool;
 }

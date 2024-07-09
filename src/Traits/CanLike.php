@@ -31,7 +31,6 @@ trait CanLike
      * Check if the current model is liking another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function isLiking($model): bool
     {
@@ -50,7 +49,6 @@ trait CanLike
      * Check if the current model is liking another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function likes($model): bool
     {
@@ -61,7 +59,6 @@ trait CanLike
      * Like a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function like($model): bool
     {
@@ -84,7 +81,6 @@ trait CanLike
      * Unlike a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function unlike($model): bool
     {

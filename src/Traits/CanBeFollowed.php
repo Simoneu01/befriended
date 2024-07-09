@@ -51,7 +51,6 @@ trait CanBeFollowed
      * Remove a follower from this model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function revokeFollower($model): bool
     {
@@ -66,7 +65,6 @@ trait CanBeFollowed
      * Check if the model has requested to follow the current model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function hasFollowRequestFrom($model): bool
     {
@@ -85,7 +83,6 @@ trait CanBeFollowed
      * Accept request from a certain model to be followed.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function acceptFollowRequest($model): bool
     {
@@ -110,7 +107,6 @@ trait CanBeFollowed
      * Decline request from a certain model to be followed.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function declineFollowRequest($model): bool
     {
