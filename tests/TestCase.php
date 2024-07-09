@@ -2,20 +2,18 @@
 
 namespace Rennokki\Befriended\Test;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Rennokki\Befriended\Models\BlockerModel;
 use Rennokki\Befriended\Models\FollowerModel;
 use Rennokki\Befriended\Models\LikerModel;
 use Rennokki\Befriended\Test\Models\Page;
 use Rennokki\Befriended\Test\Models\User;
-use Illuminate\Database\Eloquent\Factories\Factory;
 
 abstract class TestCase extends Orchestra
 {
     /**
      * Set up the tests.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -29,9 +27,8 @@ abstract class TestCase extends Orchestra
 
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
 
-
         Factory::guessFactoryNamesUsing(function (string $modelName) {
-            return 'Rennokki\\Befriended\\Test\\Database\\Factories\\' . class_basename($modelName) . 'Factory';
+            return 'Rennokki\\Befriended\\Test\\Database\\Factories\\'.class_basename($modelName).'Factory';
         });
 
         $this->artisan('migrate', ['--database' => 'sqlite']);
@@ -60,9 +57,9 @@ abstract class TestCase extends Orchestra
     {
         $app['config']->set('database.default', 'sqlite');
         $app['config']->set('database.connections.sqlite', [
-            'driver'   => 'sqlite',
+            'driver' => 'sqlite',
             'database' => __DIR__.'/database.sqlite',
-            'prefix'   => '',
+            'prefix' => '',
         ]);
         $app['config']->set('auth.providers.users.model', User::class);
         $app['config']->set('auth.providers.pages.model', Page::class);

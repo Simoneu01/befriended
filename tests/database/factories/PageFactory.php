@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Rennokki\Befriended\Test\Database\Factories;
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 use Rennokki\Befriended\Test\Models\Page;
 
 final class PageFactory extends Factory

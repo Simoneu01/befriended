@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Rennokki\Befriended\Test\Database\Factories;
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 use Rennokki\Befriended\Test\Models\User;
 
 final class UserFactory extends Factory
@@ -24,6 +24,6 @@ final class UserFactory extends Factory
             'email' => Str::random(5).'@gmail.com',
             'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
             'remember_token' => Str::random(10),
-            ];
+        ];
     }
 }

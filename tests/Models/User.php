@@ -17,14 +17,13 @@ use Rennokki\Befriended\Traits\CanBlock;
 use Rennokki\Befriended\Traits\CanFollow;
 use Rennokki\Befriended\Traits\CanLike;
 
-class User extends Authenticatable implements Following, Blocking, Liking
+class User extends Authenticatable implements Blocking, Following, Liking
 {
+    use BlockFilterable, CanBeBlocked,
+        CanBeFollowed, CanBeLiked,
+        CanBlock, CanFollow,
+        CanLike, FollowFilterable, LikeFilterable;
     use HasFactory;
-
-    use CanFollow, CanBeFollowed,
-        CanBlock, CanBeBlocked,
-        CanLike, CanBeLiked,
-        LikeFilterable, BlockFilterable, FollowFilterable;
 
     protected $fillable = [
         'name', 'email', 'password',

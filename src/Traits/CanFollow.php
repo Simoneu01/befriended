@@ -32,7 +32,6 @@ trait CanFollow
      * Check if the current model is following another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function isFollowing($model): bool
     {
@@ -51,7 +50,6 @@ trait CanFollow
      * Check if the current model is following another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function follows($model): bool
     {
@@ -62,7 +60,6 @@ trait CanFollow
      * Follow a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function follow($model): bool
     {
@@ -93,7 +90,6 @@ trait CanFollow
      * Unfollow a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function unfollow($model): bool
     {
@@ -133,7 +129,6 @@ trait CanFollow
      * Check if the current model has requested to follow another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function hasFollowRequested($model): bool
     {
@@ -152,7 +147,6 @@ trait CanFollow
      * Request to follow a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function followRequest($model): bool
     {
@@ -180,7 +174,6 @@ trait CanFollow
      * Cancel follow request a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function cancelFollowRequest($model): bool
     {

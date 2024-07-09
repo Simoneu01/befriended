@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Rennokki\Befriended\Test\Database\Factories;
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 use Rennokki\Befriended\Test\Models\SimplePage;
 
 final class SimplePageFactory extends Factory
@@ -20,7 +20,7 @@ final class SimplePageFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'Page' . Str::random(5),
+            'name' => 'Page'.Str::random(5),
         ];
     }
 }

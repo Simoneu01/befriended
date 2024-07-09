@@ -16,7 +16,6 @@ interface Blocker
      * Check if the current model is blocking another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function isBlocking($model): bool;
 
@@ -24,7 +23,6 @@ interface Blocker
      * Check if the current model is blocking another model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function blocks($model): bool;
 
@@ -32,7 +30,6 @@ interface Blocker
      * Block a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $mode
-     * @return bool
      */
     public function block($model): bool;
 
@@ -40,7 +37,6 @@ interface Blocker
      * Unblock a certain model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return bool
      */
     public function unblock($model): bool;
 }
